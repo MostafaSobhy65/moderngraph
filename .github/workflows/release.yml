@@ -11,13 +11,13 @@ jobs:
     environment: release
     permissions:
       contents: write
-      id-token: write # needed for PyPI trusted publisher (OIDC), but we can also use PYPI_API_TOKEN
+      id-token: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # fetch all tags
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,7 +28,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install uv
-          # We need a tool to parse toml, like `tomli` or just python 3.11+ `tomllib`
 
       - name: Get version from pyproject.toml
         id: get_version
