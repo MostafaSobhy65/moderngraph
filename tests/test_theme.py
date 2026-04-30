@@ -4,7 +4,10 @@ from moderngraph.theme import Theme
 
 
 def test_load_custom_theme(tmp_path):
-    custom_theme = {"palettes": {"custom": ["#ff0000"]}, "ui": {"background": "#ffffff"}}
+    custom_theme = {
+        "palettes": {"custom": ["#ff0000"]},
+        "ui": {"background": "#ffffff"},
+    }
     theme_file = tmp_path / "theme.json"
     theme_file.write_text(json.dumps(custom_theme))
 
