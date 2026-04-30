@@ -1,6 +1,26 @@
-# moderngraph
+<div align="center">
+  <img src="static/banner.svg" alt="moderngraph banner" width="600" />
 
-**moderngraph** is a modern, lightweight Python plotting library aiming to simplify the creation of beautiful and highly customizable data visualizations (heatmaps, bar plots, etc.) using seaborn, matplotlib, and pandas.
+
+  [![PyPI Version](https://img.shields.io/pypi/v/moderngraph)](https://pypi.org/project/moderngraph/)
+  [![PyPI - License](https://img.shields.io/pypi/l/moderngraph)](https://pypi.org/project/moderngraph/)
+  [![Python Supported](https://img.shields.io/pypi/pyversions/moderngraph.svg)](https://pypi.org/project/moderngraph/)
+  [![CI](https://img.shields.io/github/actions/workflow/status/mostafasobhy65/moderngraph/ci.yml?branch=main&label=CI)](https://github.com/mostafasobhy65/moderngraph/actions?query=workflow%3Aci)
+  [![CD](https://img.shields.io/github/actions/workflow/status/mostafasobhy65/moderngraph/cd.yml?branch=main&label=CD)](https://github.com/mostafasobhy65/moderngraph/actions?query=workflow%3Acd)
+  [![Coverage](https://img.shields.io/codecov/c/github/mostafasobhy65/moderngraph)](https://codecov.io/gh/mostafasobhy65/moderngraph)
+
+
+  **A modern, lightweight Python plotting library for modern, clean, highly customizable data visualizations.**
+</div>
+
+---
+
+## Features
+
+- **Minimalist API:** Create stunning visuals (heatmaps, bar plots, etc.) with just a few lines of code.
+- **Highly Customizable:** Built on top of `seaborn` and `matplotlib`.
+- **Data Ready:** Native support for `pandas` and `polars` DataFrames.
+- **Smart Themes:** Clean, modern defaults to make your graphs presentation-ready out of the box.
 
 ## Installation
 
@@ -8,16 +28,27 @@
 pip install moderngraph
 ```
 
-## Usage
+## Quickstart
+
+Render a beautiful heatmap effortlessly:
 
 ```python
 import pandas as pd
 from moderngraph.heatmaps.modern_heatmap import ModernHeatmap
 
-# Create some data
-data = pd.DataFrame({"A": [1, 2], "B": [3, 4]})
+# 1. Create some data
+data = pd.DataFrame({
+    "A": [1, 2],
+    "B": [3, 4]
+})
 
-# Plot a beautiful heatmap
+# 2. Plot a beautiful heatmap
 heatmap = ModernHeatmap(data)
 heatmap.plot()
 ```
+
+> **Tip:** Check out the interactive [EDA Notebooks](notebooks/) for more in-depth examples!
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page or submit a pull request.

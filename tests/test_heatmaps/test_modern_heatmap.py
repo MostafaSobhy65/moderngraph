@@ -3,6 +3,7 @@ import os
 import matplotlib
 import pandas as pd
 import polars as pl
+import pytest
 
 matplotlib.use("Agg")  # Use non-interactive backend for testing
 
@@ -11,6 +12,7 @@ from moderngraph.heatmaps import (
     extract_polars_data,
     plot_modern_heatmap,
 )
+from moderngraph.heatmaps.modern_heatmap import make_cmap, value_to_color
 
 
 def test_extract_pandas_data():
@@ -61,3 +63,24 @@ def test_plot_heatmap_polars(tmp_path):
     )
 
     assert os.path.exists(out_file)
+
+
+def test_make_cmap_with_colors():
+    assert make_cmap([(0, 0, 0), (1, 1, 1)]).name == "heatmap"
+
+
+def test_value_to_color_same_min_max():
+    assert len(value_to_color(1, 1, 1, make_cmap())) == 3
+
+
+def test_plot_heatmap_invalid_df():
+    with pytest.raises(ValueError):
+        plot_modern_heatmap(None, "y", "x", "val")
+
+
+def test_plot_heatmap_show(monkeypatch):
+    import matplotlib.pyplot as plt
+
+    monkeypatch.setattr(plt, "show", lambda: None)
+    df = pd.DataFrame({"y": ["A"], "x": ["C"], "val": [10]})
+    plot_modern_heatmap(df, "y", "x", "val", show=True, output_path=None)
