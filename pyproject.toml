@@ -1,16 +1,23 @@
 [project]
 name = "moderngraph"
 dynamic = ["version"]
-description = "Add your description here"
+description = "A modern, lightweight Python plotting library for modern, clean, highly customizable data visualizations."
 readme = "README.md"
 authors = [{ name = "Mostafa Sobhy", email = "Mostafa.Sobhy@outlook.de" }]
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = [
     "matplotlib>=3.10.9",
-    "pandas>=3.0.2",
+    "pandas>=2.0.0",
     "polars>=1.40.1",
     "pyarrow>=24.0.0",
     "seaborn>=0.13.2",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 
 [project.scripts]
@@ -24,4 +31,16 @@ build-backend = "hatchling.build"
 path = "src/moderngraph/__init__.py"
 
 [dependency-groups]
-dev = ["ipykernel>=7.2.0", "pytest>=9.0.3", "ruff>=0.15.12"]
+dev = [
+    "ipykernel>=7.2.0",
+    "pytest>=9.0.3",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.15.12",
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov=src/moderngraph --cov-report=xml --cov-report=term --cov-fail-under=80"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["src/moderngraph"]
