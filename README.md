@@ -2,8 +2,8 @@
   <img src="https://raw.githubusercontent.com/mostafasobhy65/moderngraph/main/static/banner.svg" alt="moderngraph banner" width="600" />
 
 
-  [![Release](https://img.shields.io/pypi/v/moderngraph?label=Release)](https://pypi.org/project/moderngraph/)
-  [![License](https://img.shields.io/pypi/l/moderngraph?label=License)](https://pypi.org/project/moderngraph/)
+  [![Release](https://img.shields.io/pypi/v/moderngraph?label=Release)](https://github.com/mostafasobhy65/moderngraph/releases)
+  [![License](https://img.shields.io/pypi/l/moderngraph?label=License)](https://github.com/mostafasobhy65/moderngraph/blob/main/LICENSE)
   [![CI](https://img.shields.io/github/actions/workflow/status/mostafasobhy65/moderngraph/ci.yml?branch=main&label=CI)](https://github.com/mostafasobhy65/moderngraph/actions?query=workflow%3Aci)
   [![CD](https://img.shields.io/github/actions/workflow/status/mostafasobhy65/moderngraph/cd.yml?branch=main&label=CD)](https://github.com/mostafasobhy65/moderngraph/actions?query=workflow%3Acd)
   [![Coverage](https://img.shields.io/codecov/c/github/mostafasobhy65/moderngraph)](https://codecov.io/gh/mostafasobhy65/moderngraph)
