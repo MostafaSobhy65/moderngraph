@@ -1,10 +1,9 @@
 <div align="center">
-  <img src="static/banner.svg" alt="moderngraph banner" width="600" />
+  <img src="https://raw.githubusercontent.com/mostafasobhy65/moderngraph/main/static/banner.svg" alt="moderngraph banner" width="600" />
 
 
-  [![PyPI Version](https://img.shields.io/pypi/v/moderngraph)](https://pypi.org/project/moderngraph/)
-  [![PyPI - License](https://img.shields.io/pypi/l/moderngraph)](https://pypi.org/project/moderngraph/)
-  [![Python Supported](https://img.shields.io/pypi/pyversions/moderngraph.svg)](https://pypi.org/project/moderngraph/)
+  [![Release](https://img.shields.io/pypi/v/moderngraph?label=Release)](https://pypi.org/project/moderngraph/)
+  [![License](https://img.shields.io/pypi/l/moderngraph?label=License)](https://pypi.org/project/moderngraph/)
   [![CI](https://img.shields.io/github/actions/workflow/status/mostafasobhy65/moderngraph/ci.yml?branch=main&label=CI)](https://github.com/mostafasobhy65/moderngraph/actions?query=workflow%3Aci)
   [![CD](https://img.shields.io/github/actions/workflow/status/mostafasobhy65/moderngraph/cd.yml?branch=main&label=CD)](https://github.com/mostafasobhy65/moderngraph/actions?query=workflow%3Acd)
   [![Coverage](https://img.shields.io/codecov/c/github/mostafasobhy65/moderngraph)](https://codecov.io/gh/mostafasobhy65/moderngraph)
