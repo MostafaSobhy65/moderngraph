@@ -38,7 +38,7 @@ from moderngraph.heatmaps.modern_heatmap import ModernHeatmap
 
 # 1. Create some data
 data = pd.DataFrame({
-    "A": [1, 2], 
+    "A": [1, 2],
     "B": [3, 4]
 })
 
