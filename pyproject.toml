@@ -1,6 +1,6 @@
 [project]
 name = "moderngraph"
-version = "0.1.2"
+dynamic = ["version"]
 description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "Mostafa Sobhy", email = "Mostafa.Sobhy@outlook.de" }]
@@ -17,8 +17,11 @@ dependencies = [
 moderngraph = "moderngraph:main"
 
 [build-system]
-requires = ["uv_build>=0.8.5,<0.9.0"]
-build-backend = "uv_build"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/moderngraph/__init__.py"
 
 [dependency-groups]
 dev = ["ipykernel>=7.2.0", "pytest>=9.0.3", "ruff>=0.15.12"]
