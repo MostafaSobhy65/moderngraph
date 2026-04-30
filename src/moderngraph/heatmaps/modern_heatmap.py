@@ -6,6 +6,7 @@ import pandas as pd
 import polars as pl
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.patches import FancyBboxPatch
+
 from moderngraph.theme import Theme
 
 
@@ -27,7 +28,20 @@ def text_color_for_bg(rgb, threshold=0.55):
     return "white" if brightness < threshold else "#333333"
 
 
-def draw_cells(ax, data, rows, cols, cmap, vmin, vmax, cell_size, gap, radius, fontsize, show_annotations):
+def draw_cells(
+    ax,
+    data,
+    rows,
+    cols,
+    cmap,
+    vmin,
+    vmax,
+    cell_size,
+    gap,
+    radius,
+    fontsize,
+    show_annotations,
+):
     for ri, _ in enumerate(rows):
         for ci, _ in enumerate(cols):
             x = ci * (cell_size + gap)
@@ -119,7 +133,9 @@ def draw_title(
     )
 
 
-def draw_legend(ax, cmap, vmin, vmax, total_h, legend_x, marker_size, fontsize, legend_color):
+def draw_legend(
+    ax, cmap, vmin, vmax, total_h, legend_x, marker_size, fontsize, legend_color
+):
     for gy in np.linspace(0, total_h, 300):
         ax.plot(
             legend_x,
@@ -267,10 +283,25 @@ def plot_modern_heatmap(
     ax.set_facecolor(bg_color)
 
     draw_cells(
-        ax, data, rows, cols, cmap, vmin, vmax, cell_size, gap, radius, cell_fontsize, show_annotations=show_annotations
+        ax,
+        data,
+        rows,
+        cols,
+        cmap,
+        vmin,
+        vmax,
+        cell_size,
+        gap,
+        radius,
+        cell_fontsize,
+        show_annotations=show_annotations,
     )
-    draw_row_labels(ax, rows, cell_size, gap, label_x_offset, label_fontsize, label_color)
-    draw_col_labels(ax, cols, cell_size, gap, label_y_offset, label_fontsize, label_color)
+    draw_row_labels(
+        ax, rows, cell_size, gap, label_x_offset, label_fontsize, label_color
+    )
+    draw_col_labels(
+        ax, cols, cell_size, gap, label_y_offset, label_fontsize, label_color
+    )
     draw_title(
         ax,
         title,
