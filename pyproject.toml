@@ -3,7 +3,7 @@ name = "moderngraph"
 dynamic = ["version"]
 description = "A modern, lightweight Python plotting library for modern, clean, highly customizable data visualizations."
 readme = "README.md"
-license = { text = "MIT" }
+license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",

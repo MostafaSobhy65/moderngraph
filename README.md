@@ -3,10 +3,10 @@
 
 
   [![Release](https://img.shields.io/pypi/v/moderngraph?label=Release)](https://github.com/mostafasobhy65/moderngraph/releases)
-  [![License](https://img.shields.io/pypi/l/moderngraph?label=License)](https://github.com/mostafasobhy65/moderngraph/blob/main/LICENSE)
+  [![License](https://img.shields.io/github/license/mostafasobhy65/moderngraph?label=License)](https://github.com/mostafasobhy65/moderngraph/blob/main/LICENSE)
   [![CI](https://img.shields.io/github/actions/workflow/status/mostafasobhy65/moderngraph/ci.yml?branch=main&label=CI)](https://github.com/mostafasobhy65/moderngraph/actions?query=workflow%3Aci)
   [![CD](https://img.shields.io/github/actions/workflow/status/mostafasobhy65/moderngraph/cd.yml?branch=main&label=CD)](https://github.com/mostafasobhy65/moderngraph/actions?query=workflow%3Acd)
-  [![Coverage](https://img.shields.io/codecov/c/github/mostafasobhy65/moderngraph)](https://codecov.io/gh/mostafasobhy65/moderngraph)
+  [![Coverage](https://codecov.io/gh/mostafasobhy65/moderngraph/graph/badge.svg)](https://codecov.io/gh/mostafasobhy65/moderngraph)
 
 
   **A modern, lightweight Python plotting library for modern, clean, highly customizable data visualizations.**
