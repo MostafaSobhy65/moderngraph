@@ -7,7 +7,7 @@ from cycler import cycler
 from matplotlib.colors import LinearSegmentedColormap
 
 _THEME_DIR = Path(__file__).parent
-_COLORS_FILE = _THEME_DIR / "colors.json"
+_COLORS_FILE = _THEME_DIR / "theme.json"
 
 
 def load_theme_config() -> Dict[str, Any]:
@@ -30,6 +30,10 @@ class Theme:
         return THEME_CONFIG["ui"].get(element, "black")
 
     @classmethod
+    def get_font_family(cls) -> str:
+        return THEME_CONFIG.get("fonts", {}).get("family", "sans-serif")
+
+    @classmethod
     def get_cmap(cls, palette_name: str) -> LinearSegmentedColormap:
         colors = cls.get_palette(palette_name)
         return LinearSegmentedColormap.from_list(f"{palette_name}_cmap", colors)
@@ -47,6 +51,7 @@ class Theme:
         plt.rcParams["ytick.color"] = cls.get_color("label")
         plt.rcParams["figure.facecolor"] = cls.get_color("background")
         plt.rcParams["axes.facecolor"] = cls.get_color("background")
+        plt.rcParams["font.family"] = cls.get_font_family()
 
     @classmethod
     def load_custom_theme(cls, path_to_json: str):
