@@ -13,7 +13,7 @@ from moderngraph.theme import Theme
 def make_cmap(colors=None):
     if colors:
         return LinearSegmentedColormap.from_list("heatmap", colors)
-    return Theme.get_cmap("default_heatmap")
+    return Theme.get_cmap("corp_heatmap")
 
 
 def value_to_color(v, vmin, vmax, cmap):

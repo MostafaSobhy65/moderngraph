@@ -1,0 +1,106 @@
+{
+    "palettes": {
+        "default_heatmap": [
+            [
+                1.00,
+                0.98,
+                0.80
+            ],
+            [
+                1.00,
+                0.80,
+                0.00
+            ],
+            [
+                0.90,
+                0.20,
+                0.10
+            ],
+            [
+                0.55,
+                0.02,
+                0.05
+            ]
+        ],
+        "corp_heatmap": [
+            [
+                1.00,
+                1.00,
+                1.00
+            ],
+            [
+                1.00,
+                0.80,
+                0.00
+            ],
+            [
+                0.83,
+                0.02,
+                0.07
+            ],
+            [
+                0.00,
+                0.00,
+                0.00
+            ]
+        ],
+        "categorical": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#d62728",
+            "#9467bd",
+            "#8c564b",
+            "#e377c2",
+            "#7f7f7f",
+            "#bcbd22",
+            "#17becf"
+        ],
+        "corp_categorical": [
+            "#FFCC00",
+            "#D40511",
+            "#C4D19A",
+            "#A3D0B8",
+            "#B2DEF3",
+            "#C5D3F0",
+            "#B7BBCE"
+        ],
+        "corp_core": {
+            "postyellow": "#FFCC00",
+            "dhl_red": "#D40511",
+            "black": "#000000",
+            "white": "#FFFFFF"
+        },
+        "corp_gogreen": {
+            "dark_green": "#006443"
+        },
+        "corp_supplementary": [
+            "#C4D19A",
+            "#A3D0B8",
+            "#B2DEF3",
+            "#C5D3F0",
+            "#B7BBCE"
+        ],
+        "shades_of_gray": {
+            "gray_80": "#333333",
+            "gray_60": "#666666",
+            "gray_45": "#8c8c8c",
+            "gray_30": "#b2b2b2",
+            "gray_20": "#cccccc",
+            "gray_10": "#e6e6e6",
+            "gray_08": "#ebebeb",
+            "gray_05": "#f2f2f2"
+        }
+    },
+    "ui": {
+        "label": "#222222",
+        "title": "#1a1f4e",
+        "subtitle": "#888888",
+        "legend": "#555555",
+        "background": "white",
+        "accent_gogreen": "#006443"
+    },
+    "fonts": {
+        "family": "Inter"
+    }
+}
