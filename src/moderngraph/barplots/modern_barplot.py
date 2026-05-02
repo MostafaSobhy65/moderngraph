@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import polars as pl
-from matplotlib.patches import Patch
 
 from moderngraph.theme import Theme
 
@@ -33,21 +32,34 @@ def _draw_legend(
     colors: List[str],
     fontsize: int,
     text_color: str,
-    len_rows: int,
+    y_pos: float,
 ) -> None:
+    from matplotlib.lines import Line2D
+
     handles = [
-        Patch(facecolor=colors[i % len(colors)], label=label)
+        Line2D(
+            [0],
+            [0],
+            marker="o",
+            color="w",
+            markerfacecolor=colors[i % len(colors)],
+            markersize=8,
+            label=label,
+        )
         for i, label in enumerate(labels)
     ]
-    dynamic_va_padding = 1.0 / max(1, len_rows * 1.35)
     ax.legend(
         handles=handles,
-        loc="upper right",
-        bbox_to_anchor=(1, 1 + dynamic_va_padding),
+        loc="lower right",
+        bbox_to_anchor=(0.97, y_pos),
         ncols=len(labels),
         frameon=False,
         fontsize=fontsize,
         labelcolor=text_color,
+        handletextpad=0.4,
+        columnspacing=1.0,
+        borderpad=0,
+        borderaxespad=0,
     )
 
 
@@ -115,7 +127,8 @@ def draw_title(
     subtitle_fontsize: int,
     title_color: str,
     subtitle_color: str,
-) -> None:
+) -> float:
+    base_y = 1.02
     if title and subtitle:
         # Title reserves space; subtitle slips underneath it seamlessly, avoiding huge manual pads
         ax.set_title(
@@ -127,7 +140,7 @@ def draw_title(
         )
         ax.text(
             0,
-            1.02,
+            base_y,
             subtitle,
             transform=ax.transAxes,
             ha="left",
@@ -147,6 +160,7 @@ def draw_title(
         ax.set_title(
             subtitle, loc="left", color=subtitle_color, fontsize=subtitle_fontsize
         )
+    return base_y
 
 
 def plot_modern_barplot(
@@ -313,7 +327,7 @@ def plot_modern_barplot(
     draw_axes_and_spines(
         ax, y_pos, rows, label_color, label_fontsize, max_val, is_percent
     )
-    draw_title(
+    base_y = draw_title(
         ax,
         title,
         subtitle,
@@ -324,8 +338,7 @@ def plot_modern_barplot(
     )
     if show_legend and barmode in ["stacked", "percent"]:
         labels = legend_labels or val_cols
-        # Scale the vertical padding inversely with the number of rows to keep the absolute physical padding constant
-        _draw_legend(ax, labels, colors, label_fontsize, label_color, len(rows))
+        _draw_legend(ax, labels, colors, label_fontsize, label_color, base_y)
     ax.set_ylim(len(rows) - 0.5, -0.5)
     plt.tight_layout()
 
